@@ -1,5 +1,13 @@
 # fampay-intern-assessment
 
+## Language & Framework Used
+- Python (Django) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+- HTML ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- CSS ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+## Tools Used
+- GitHub ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+- Docker ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+
 # Backend Assignment (Intern) | FamPay
 ## Assessment Goal:
 The goal of this assessment is to create an API that retrieves the most recent videos from YouTube, sorted by their date of publication, based on a specific search term (such as "internships"). The API will respond with paginated results and will continuously query the YouTube API every minute to ensure that the latest videos are always available. The information for each video, including the title, description, publishing date and time, thumbnail URLs, and video and channel IDs, will be stored in a database.
@@ -15,9 +23,6 @@ Advanced Python Scheduler (APScheduler) is a Python library that lets us schedul
 
 A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
 
-## Language & Framework Used
-Python (Django), HTML and CSS
-
 ## Bonus Points
 - Added support for supplying multiple API keys so that if quota is exhausted on one, it automatically uses the next available key.
 - Dashboard to view the stored videos with filter option.
@@ -29,7 +34,7 @@ Python (Django), HTML and CSS
   - Docker has been used to address dependency issues that arise in software development by allowing developers to package their application and its dependencies into a single container. This ensures that the application will always run the same way, regardless of the environment.
   - By packaging the application and its dependencies into a container, we can ensure that the application will always have access to the correct versions of libraries and other dependencies. This eliminates the need to manually manage dependencies and ensures that the application will run consistently across different environments.
 
-## How to run the repo
+## How to run the repo ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 - Create a python environment. below is the example of creating the environment using `conda` <br>
 `conda create -n env_name`
 - Clone the repository, and `cd` into it.
@@ -39,7 +44,7 @@ Python (Django), HTML and CSS
 <b> The development server should be up and running at http://127.0.0.1:8000/</b>
 - You can create the superuser with `python manage.py createsuperuser`.
 
-## Building Image using Docker
+## Building Image using Docker ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 We can pass multiple environment variables during a Docker build by using the `--build-arg` flag in the docker build command. The syntax for the flag is `--build-arg VAR_NAME=VALUE`. For example, to pass two environment variables named VAR1 and VAR2, you would run the following command:
 `docker build --build-arg VAR1=value1 --build-arg VAR2=value2 -t myimage .`
 
