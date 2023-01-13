@@ -1,2 +1,2 @@
-docker build --tag fampay-django .
+docker build -t fampay-django --build-arg env_file=envfile.env .
 docker run --publish 8000:8000 fampay-django
