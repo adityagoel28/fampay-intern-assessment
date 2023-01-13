@@ -20,4 +20,7 @@ from api.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('search/', search),
+    path('search/<str:PageToken>/', pagination),
+    path('filter/', filter_video),
 ]

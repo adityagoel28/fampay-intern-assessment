@@ -23,7 +23,6 @@ def search(request):
     }
 
     r = requests.get(search_url, params = params)
-    print(r.text)
     res = r.json() #converting to json object
 
     try:
@@ -41,24 +40,17 @@ def search(request):
             }
 
             r = requests.get(search_url, params= params)
-            print(r.text)
             res = r.json()
 
     except KeyError:
         pass
     
-    # print('items', res['items'])
-    # datetime object containing current date and time
-    now = datetime.now()
-
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    # print("date and time =", dt_string)	
+    now = datetime.now()    # datetime object containing current date and time
 
     jsonn = res['items']
     nextPage = res['nextPageToken'] # getting the next Page Token for pagination
 
     for item in jsonn:
-        print('time', item['snippet']['publishedAt'])
         d1 = datetime.strptime(item['snippet']['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
         d1 = d1 + + timedelta(minutes = 330) # adding 330 minutes to the time to get the correct timezone
         item['snippet']['publishedAt'] = d1
@@ -95,7 +87,6 @@ def pagination(request, PageToken):
     }
 
     r = requests.get(search_url, params = params)
-    print(r.text)
     res = r.json()
     
     try:
@@ -115,7 +106,6 @@ def pagination(request, PageToken):
             }
 
             r = requests.get(search_url, params= params)
-            print(r.text)
             res = r.json()
 
     except KeyError:
@@ -127,7 +117,6 @@ def pagination(request, PageToken):
         prevPage = res['prevPageToken']
 
         for item in jsonn:
-            print('time', item['snippet']['publishedAt'])
             d1 = datetime.strptime(item['snippet']['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
             d1 = d1 + + timedelta(minutes = 330)
             item['snippet']['publishedAt'] = d1
@@ -147,7 +136,6 @@ def pagination(request, PageToken):
 
     except KeyError:
         for item in jsonn:
-            print('time', item['snippet']['publishedAt'])
             d1 = datetime.strptime(item['snippet']['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
             d1 = d1 + + timedelta(minutes = 330)
             item['snippet']['publishedAt'] = d1
@@ -167,7 +155,6 @@ def pagination(request, PageToken):
 
 def filter_video(request):
     filter_duration = request.POST['duration']
-    print(filter_duration)
 
     search_url = 'https://www.googleapis.com/youtube/v3/search'
 
@@ -183,7 +170,6 @@ def filter_video(request):
     }
 
     r = requests.get(search_url, params = params)
-    print(r.text)
     res = r.json()
 
     try:
@@ -202,19 +188,15 @@ def filter_video(request):
             }
 
             r = requests.get(search_url, params = params)
-            print(r.text)
             res = r.json()
 
     except KeyError:
         pass
 
-    # print('items', res['items'])
-
     jsonn = res['items']
     nextPage = res['nextPageToken']
 
     for item in jsonn:
-        print('time', item['snippet']['publishedAt'])
         d1 = datetime.strptime(item['snippet']['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
         d1 = d1 + + timedelta(minutes = 330)
         item['snippet']['publishedAt'] = d1
