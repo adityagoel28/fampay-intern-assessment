@@ -24,6 +24,17 @@ Python (Django), HTML and CSS
 ![github](https://user-images.githubusercontent.com/67872867/176204848-9e1b4169-eddd-4fda-acdb-b6a677b18663.jpg)
 ![image](https://user-images.githubusercontent.com/67872867/176204726-35d8acce-4c33-4255-bcbb-6c8cc4e47736.png)
 - Django Secret Key and YouTube API has been used as environment variable, therefore they are hidden and <b>secure.</b>
+- Added Dockerfile
+  - <b> Benfits of Docker</b>
+  - Docker has been used to address dependency issues that arise in software development by allowing developers to package their application and its dependencies into a single container. This ensures that the application will always run the same way, regardless of the environment.
+  - By packaging the application and its dependencies into a container, we can ensure that the application will always have access to the correct versions of libraries and other dependencies. This eliminates the need to manually manage dependencies and ensures that the application will run consistently across different environments.
+
+## Building Image using Docker
+We can pass multiple environment variables during a Docker build by using the `--build-arg` flag in the docker build command. The syntax for the flag is `--build-arg VAR_NAME=VALUE`. For example, to pass two environment variables named VAR1 and VAR2, you would run the following command:
+`docker build --build-arg VAR1=value1 --build-arg VAR2=value2 -t myimage .`
+
+We can also use a file to pass multiple env variables in the following way -
+`docker build --build-arg env_file=path/to/your/env/file -t myimage .`
 
 ### Filter
 Video Duration filter has been added to the website. The video duration options are:
