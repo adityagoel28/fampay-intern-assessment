@@ -4,7 +4,7 @@
 ## Assessment Goal:
 The goal of this assessment is to create an API that retrieves the most recent videos from YouTube, sorted by their date of publication, based on a specific search term (such as "internships"). The API will respond with paginated results and will continuously query the YouTube API every minute to ensure that the latest videos are always available. The information for each video, including the title, description, publishing date and time, thumbnail URLs, and video and channel IDs, will be stored in a database.
 ## Video Database
-![image](https://user-images.githubusercontent.com/67872867/176224136-0ce8546e-5d23-49a0-9b1d-cf3628a8fc8d.png)
+![image](https://user-images.githubusercontent.com/67872867/212305468-6530ad42-03d0-46ed-a5e6-2617a979a311.png)
 
 ## Implementation
 A Javascript function is created which redirects the page to `/search/` url every 1 minute, which then goes to the `search` function inside `views.py`. Inside the function, we call the YouTube API and fetch the latest video results.
@@ -21,8 +21,8 @@ Python (Django), HTML and CSS
 ## Bonus Points
 - Added support for supplying multiple API keys so that if quota is exhausted on one, it automatically uses the next available key.
 - Dashboard to view the stored videos with filter option.
-![github](https://user-images.githubusercontent.com/67872867/176204848-9e1b4169-eddd-4fda-acdb-b6a677b18663.jpg)
-![image](https://user-images.githubusercontent.com/67872867/176204726-35d8acce-4c33-4255-bcbb-6c8cc4e47736.png)
+![image](https://user-images.githubusercontent.com/67872867/212303720-113b3856-b60d-420a-bdaf-9a4694127910.png)
+![image](https://user-images.githubusercontent.com/67872867/212305414-9281a2b1-82d3-42c5-8f2b-524b447e1339.png)
 - Django Secret Key and YouTube API has been used as environment variable, therefore they are hidden and <b>secure.</b>
 - Added Dockerfile
   - <b> Benfits of Docker</b>
@@ -33,7 +33,7 @@ Python (Django), HTML and CSS
 We can pass multiple environment variables during a Docker build by using the `--build-arg` flag in the docker build command. The syntax for the flag is `--build-arg VAR_NAME=VALUE`. For example, to pass two environment variables named VAR1 and VAR2, you would run the following command:
 `docker build --build-arg VAR1=value1 --build-arg VAR2=value2 -t myimage .`
 
-We can also use a file to pass multiple env variables in the following way -
+We can also use a file to pass multiple env variables in the following way - <br>
 `docker build --build-arg env_file=path/to/your/env/file -t myimage .`
 
 ### Filter
