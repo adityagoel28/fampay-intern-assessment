@@ -1,0 +1,8 @@
+django
+gunicorn
+pillow
+whitenoise
+psycopg2
+requests
+python-decouple
+apscheduler
