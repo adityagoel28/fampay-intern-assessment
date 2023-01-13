@@ -23,7 +23,7 @@ Advanced Python Scheduler (APScheduler) is a Python library that lets us schedul
 
 A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
 
-## Bonus Points
+## Bonus Points 🌟
 - Added support for supplying multiple API keys so that if quota is exhausted on one, it automatically uses the next available key.
 - Dashboard to view the stored videos with filter option.
 ![image](https://user-images.githubusercontent.com/67872867/212303720-113b3856-b60d-420a-bdaf-9a4694127910.png)
